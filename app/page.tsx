@@ -3,8 +3,6 @@ import HeroSection from './components/HeroSection';
 import FeaturesSection from './components/FeaturesSection';
 import ProductsSection from './components/ProductsSection';
 import ProcessSection from './components/ProcessSection';
-import CollectionsSection from './components/CollectionsSection';
-import TestimonialsSection from './components/TestimonialsSection';
 import CTASection from './components/CTASection';
 import Footer from './components/Footer';
 import ScrollReveal from './components/ScrollReveal';
@@ -37,11 +35,9 @@ export default function HomePage() {
         {/* 4. How It Works (Process) */}
         <ProcessSection />
 
-        {/* 5. Collections / Shop by Category */}
-        <CollectionsSection />
+        {/* 5. Collections / Shop by Category (removed) */}
 
         {/* 6. Testimonials */}
-        <TestimonialsSection />
 
         {/* 7. CTA + Contact Form */}
         <CTASection />

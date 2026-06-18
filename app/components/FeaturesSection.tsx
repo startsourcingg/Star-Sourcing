@@ -44,7 +44,7 @@ export default function FeaturesSection() {
 
         {/* Section Header */}
         <div className="section-header js-reveal">
-          <span className="eyebrow">Why PTP Solutions</span>
+            <span className="eyebrow">Why Start Sourcing</span>
           <h2 id="features-heading">
             Crafted for Quality,<br />Built for Business
           </h2>

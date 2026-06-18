@@ -89,7 +89,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="hero" id="home" aria-label="Hero — Welcome to PTP Solutions">
+    <section className="hero" id="home" aria-label="Hero — Welcome to Start Sourcing">
 
       {/* Background slideshow */}
       <div className="hero-slider" aria-hidden="true">
@@ -129,8 +129,7 @@ export default function HeroSection() {
 
           {/* Description */}
           <p className="hero-description">
-            PTP Solutions delivers exceptional commercial printing with unrivaled
-            precision and speed. From business cards to large-format banners —
+            Start Sourcing delivers exceptional commercial printing materials. From labelling material to printing machines —
             every print is a masterpiece.
           </p>
 

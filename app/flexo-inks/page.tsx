@@ -1,9 +1,10 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ScrollReveal from '../components/ScrollReveal';
+import ProductCard from '../components/ProductCard';
 
 export const metadata = {
-  title: 'Flexo Inks | PTP Solutions',
+  title: 'Flexo Inks | Start Sourcing',
   description: 'High-performance flexographic inks for label printing — water-based, UV, and solvent formulations.',
 };
 
@@ -76,6 +77,58 @@ export default function FlexoInksPage() {
           </div>
         </section>
 
+        {/* ── Featured Flexo Inks (4 cards) ───────────────── */}
+        <section className="section">
+          <div className="container">
+            <div className="section-header js-reveal">
+              <h3>Featured Flexo Inks</h3>
+              <p style={{ marginTop: 8, color: 'var(--color-muted)' }}>Sample ink systems for common substrates and effects.</p>
+            </div>
+
+            <div className="grid-3 js-reveal-stagger" style={{ gap: '1rem' }}>
+              {[
+                { 
+                  id: 'water-1', 
+                  title: 'Electron Beam Curable Flexographic Inks', 
+                  desc: 'Low-VOC water-based ink for coated paper', 
+                  image: '/Electron Beam Curable Flexographic Inks.png', 
+                  price: 'Contact for price',
+                  features: ['Instant Electron Beam Curing: Cures ink using electron beam energy without heat or light', 'Photoinitiator-Free System: Safer formulation for food packaging and low-migration applications', 'High Durability Performance: Strong resistance to abrasion, chemicals, and moisture', 'Vibrant High-Opacity Printing: Delivers sharp details and rich color output', 'Excellent Substrate Adhesion: Performs well on flexible and non-porous materials', 'Eco-Friendly Technology: Zero VOC emissions and solvent-free formulation', 'High-Speed Production Compatibility: Suitable for wide-web and industrial-scale printing', 'Regulatory Compliance Ready: Meets strict food and pharmaceutical packaging standards', 'Stable Shelf Life Performance: Maintains consistency under production and storage conditions',],
+                 },
+                { 
+                  id: 'uv-1', 
+                  title: 'Solvent Based Flexographic Inks', 
+                  desc: 'Instant cure UV ink for films and foils', 
+                  image: '/Solvent Based Flexographic Inks.png', 
+                  price: 'Contact for price',
+                  features: ['Fast Drying Performance: Achieves quick drying through rapid solvent evaporation', 'Strong Adhesion on Non-Porous Surfaces: Bonds effectively with films, foils, and plastics', 'High-Opacity Vibrant Colors: Produces bright, vivid, and visually impactful prints', 'Excellent Durability: Resistant to abrasion, moisture, and chemical exposure', 'High-Speed Flexographic Compatibility: Optimized for fast-running printing presses', 'Sharp Image Reproduction: Ensures smooth ink transfer with precise detail clarity', 'Wide Material Compatibility: Works with various flexible packaging substrates', 'Multiple Finish Options: Available in gloss, matte, and metallic finishes', 'Long-Lasting Print Quality: Suitable for demanding industrial and environmental conditions',],
+                 },
+                { 
+                  id: 'solvent-1', 
+                  title: 'UV Curable Flexographic Inks', 
+                  desc: 'High adhesion solvent ink for OPP and PET', 
+                  image: '/UV Curable Flexographic Inks.png', 
+                  price: 'Contact for price',
+                  features: ['Instant UV Curing: Cures immediately under UV light for high-speed production workflows', 'Zero Drying Time: Ready for handling and finishing instantly after printing', 'High Gloss Vibrant Finish: Produces consistent, rich, and visually appealing colors', 'Excellent Substrate Adhesion: Works effectively on both porous and non-porous materials', 'Superior Durability: Resistant to abrasion, moisture, and chemical exposure', 'Eco-Friendly Formulation: Low or zero VOC emissions for safer operation', 'High-Precision Image Quality: Ideal for fine details and sharp print reproduction', 'Low Odor & Clean Operation: Ensures a more comfortable working environment', 'Versatile Application Use: Suitable for labels, flexible packaging, and premium printing applications',],
+                 },
+                { 
+                  id: 'metallic-1', 
+                  title: 'Water Based Flexographic Inks', 
+                  desc: 'Gold & silver effect inks for premium labels', 
+                  image: '/Water Based Flexographic Inks.png', 
+                  price: 'Contact for price',
+                  features: [ 'Eco-Friendly Formulation: Low VOC emissions for safer and cleaner production', 'Water-Based Solvent System: Uses water as the primary carrier for inks', 'Ideal for Absorbent Substrates: Performs well on paper, board, and tissue materials', 'Bright and Consistent Colors: Delivers vivid, stable, and high-quality print output', 'Easy Water Cleanup: Requires no harsh solvents for cleaning and maintenance', 'Strong Adhesion & Durability: Offers good rub and scuff resistance', 'Fast Drying Capability: Supports air and heat-assisted drying for efficiency', 'Cost-Effective Operation: Reduces material and maintenance costs', 'Food Packaging Compliance Ready: Suitable for applications meeting relevant safety standards',],
+                 },
+              ].map((p) => (
+                <ProductCard
+                  key={p.id}
+                  product={{ id: p.id, title: p.title, description: p.desc, image: p.image, price: p.price, features: (p as any).features }}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ── Color Matching Workflow ───────────────────────── */}
         <section className="section section--surface">
           <div className="container">
@@ -104,33 +157,7 @@ export default function FlexoInksPage() {
           </div>
         </section>
 
-        {/* ── Technical Specifications ───────────────────────── */}
-        <section className="section">
-          <div className="container">
-            <div className="section-header js-reveal">
-              <span className="eyebrow">Technical Specifications</span>
-              <h2>Ink Performance Matrix</h2>
-            </div>
-            <div className="js-reveal" style={{ overflowX: 'auto' }}>
-              <table>
-                <thead>
-                  <tr><th>Ink Formulation</th><th>Drying / Curing Mechanism</th><th>Viscosity (Zahn #2 / Zahn #3)</th><th>Recommended Substrates</th><th>VOC Content</th></tr>
-                </thead>
-                <tbody>
-                  {[
-                    ['Water-Based Series', 'Evaporation / Hot Air / IR', '18–24 seconds', 'Paper, Kraft, Board, Thermal Paper', 'Negligible (< 1%)'],
-                    ['UV Flexo Series', 'UV Mercury / LED Curing', '250–600 mPa.s', 'PE, PP, PET, Vinyl, Metallic Foils', 'Zero VOCs'],
-                    ['Solvent-Based Series', 'Forced Air Evaporation', '16–22 seconds', 'OPP, Polyester, Foil, Cellophane', 'Medium to High'],
-                    ['Low Migration UV', 'High-Output UV Curing', '300–700 mPa.s', 'Saran-coated films, Food labels', 'Zero VOCs'],
-                    ['Metallic Effect Inks', 'Air Dry or UV Cure', '20–28 seconds', 'Coated Papers, Clear/White Films', 'Substrate Dependent'],
-                  ].map((row) => (
-                    <tr key={row[0]}>{row.map((cell, i) => <td key={i}>{i === 0 ? <strong>{cell}</strong> : cell}</td>)}</tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
+        {/* Ink Performance Matrix removed */}
 
         {/* ── CTA ────────────────────────────────────── */}
         <section className="section section--dark">

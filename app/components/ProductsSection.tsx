@@ -1,45 +1,114 @@
 import Image from 'next/image';
+import Link from 'next/link';
+import ProductCard from './ProductCard';
 
 const products = [
   {
-    id: 'business-cards',
+    id: 'label-cloth-jumbo-roll',
     category: 'Stationery',
-    title: 'Premium Business Cards',
+    title: 'Label Cloth Jumbo Roll',
     description:
-      'Make a lasting first impression with our luxury business cards. Available in matte, gloss, and soft-touch finishes with sharp edge-to-edge printing.',
+      'Our Label Cloth Jumbo Rolls are ideal for garment manufacturers and apparel brands seeking high-quality labeling solutions. Designed for durability and smooth printing, they ensure clear branding and product information on every garment.',
     price: 'From $29',
     priceUnit: '/ 250 cards',
     badge: 'Best Seller',
     badgeType: 'badge-accent',
-    image: '/product-business-cards.png',
-    features: ['Matte & Gloss finish', '16pt premium card stock', 'Full-color both sides'],
+    image: '/label-cloth-jumbo-role.png',
+    features: ['Premium-quality cloth material', 'Suitable for garment labels and care tags', 'Available in custom widths and roll sizes'],
   },
   {
-    id: 'brochures',
+    id: 'ribbon-labels',
     category: 'Marketing',
-    title: 'Tri-Fold Brochures',
+    title: 'Ribbon Labels',
     description:
-      'Showcase your services with professional tri-fold and bi-fold brochures. High-quality paper with vivid color accuracy that makes your brand shine.',
+      'Add a premium touch to your products with our custom ribbon labels. Perfect for clothing, gifts, packaging, and branding, our ribbon labels are printed with exceptional detail and a luxurious finish.',
     price: 'From $49',
     priceUnit: '/ 100 units',
     badge: 'Popular',
     badgeType: 'badge-dark',
-    image: '/product-brochure.png',
-    features: ['Gloss or matte coating', 'Multiple fold options', 'Full bleed printing'],
+    image: '/Ribbon-Labels.png',
+    features: ['High-quality satin & woven ribbons', 'Custom colors, logos & designs', 'Durable and elegant branding solution bleed printing'],
   },
   {
-    id: 'banners',
+    id: 'barcode-stickers',
     category: 'Large Format',
-    title: 'Vinyl Banners & Roll-Ups',
+    title: 'Barcode Sticker',
     description:
-      'High-impact banners for events, trade shows, and storefronts. Durable materials with fade-resistant inks that last indoors and outdoors.',
+      'Enhance product tracking and inventory management with our premium barcode stickers. Designed for clear, accurate scanning and long-lasting performance across various applications.',
     price: 'From $79',
     priceUnit: '/ 2×4 ft',
     badge: 'Fast Delivery',
     badgeType: 'badge-outline',
-    image: '/product-banner.png',
-    features: ['UV-resistant inks', 'Indoor & outdoor grade', 'Hemmed & grommeted'],
+    image: '/Barcode-Sticker.png',
+    features: ['High-quality barcode printing', 'Durable adhesive material', 'Custom sizes & formats available'],
   },
+  {
+    id: 'security-label',
+    category: 'Large Format',
+    title: 'Security Label',
+    description:
+      'Enhance product tracking and inventory management with our premium barcode stickers. Designed for clear, accurate scanning and long-lasting performance across various applications.',
+    price: 'From $79',
+    priceUnit: '/ 2×4 ft',
+    badge: 'Fast Delivery',
+    badgeType: 'badge-outline',
+    image: '/Security-Labels.png',
+    features: ['High-quality barcode printing', 'Durable adhesive material', 'Custom sizes & formats available'],
+  },
+
+  {
+    id: 'label-cutting-machine',
+    category: 'Large Format',
+    title: 'Label Cutting Machine',
+    description:
+      'Enhance product tracking and inventory management with our premium barcode stickers. Designed for clear, accurate scanning and long-lasting performance across various applications.',
+    price: 'From $79',
+    priceUnit: '/ 2×4 ft',
+    badge: 'Fast Delivery',
+    badgeType: 'badge-outline',
+    image: '/Label Cutting Machine.png',
+    features: ['High-quality barcode printing', 'Durable adhesive material', 'Custom sizes & formats available'],
+  },
+  {
+    id: 'label-printing-machine',
+    category: 'Large Format',
+    title: 'Label Printing Machine',
+    description:
+      'Enhance product tracking and inventory management with our premium barcode stickers. Designed for clear, accurate scanning and long-lasting performance across various applications.',
+    price: 'From $79',
+    priceUnit: '/ 2×4 ft',
+    badge: 'Fast Delivery',
+    badgeType: 'badge-outline',
+    image: '/Label Printing Machine.png',
+    features: ['High-quality barcode printing', 'Durable adhesive material', 'Custom sizes & formats available'],
+  },
+  {
+    id: 'rfid-labeling-machine',
+    category: 'Large Format',
+    title: 'Rfid Labeling Machine',
+    description:
+      'Enhance product tracking and inventory management with our premium barcode stickers. Designed for clear, accurate scanning and long-lasting performance across various applications.',
+    price: 'From $79',
+    priceUnit: '/ 2×4 ft',
+    badge: 'Fast Delivery',
+    badgeType: 'badge-outline',
+    image: '/Rfid-Labeling-Machine.png',
+    features: ['High-quality barcode printing', 'Durable adhesive material', 'Custom sizes & formats available'],
+  },
+  {
+    id: 'flexographic-inks',
+    category: 'Large Format',
+    title: 'Flexographic Inks',
+    description:
+      'Enhance product tracking and inventory management with our premium barcode stickers. Designed for clear, accurate scanning and long-lasting performance across various applications.',
+    price: 'From $79',
+    priceUnit: '/ 2×4 ft',
+    badge: 'Fast Delivery',
+    badgeType: 'badge-outline',
+    image: '/Flexographic-Inks.png',
+    features: ['High-quality barcode printing', 'Durable adhesive material', 'Custom sizes & formats available'],
+  },
+  
 ];
 
 export default function ProductsSection() {
@@ -63,61 +132,24 @@ export default function ProductsSection() {
 
         {/* Products Grid */}
         <div className="grid-3 js-reveal-stagger" style={{ marginBottom: '3rem' }}>
-          {products.map((product) => (
-            <article
-              key={product.id}
-              className="product-card"
-              id={`product-${product.id}`}
-              aria-label={product.title}
-            >
-              {/* Card Image */}
-              <div className="product-card-image">
-                <Image
-                  src={product.image}
-                  alt={`${product.title} — printing product showcase`}
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-                <div className="product-card-badge">
-                  <span className={`badge ${product.badgeType}`}>{product.badge}</span>
-                </div>
-              </div>
+          {products.map((product) => {
+            const routes: Record<string, string> = {
+              'Label Cloth Jumbo Roll': '/label-cloth-jumbo-roll',
+              'Ribbon Labels': '/ribbons-and-stickers/ribbon-labels',
+              'Barcode Sticker': '/ribbons-and-stickers/barcode-stickers',
+              'Security Labels': '/ribbons-and-stickers/security-labels',
+              'Label Cutting Machine': '/label-printing-and-cutting-machines/ultrasonic-cutting-machine',
+              'Label Printing Machine': '/label-printing-and-cutting-machines/label-printing-machine',
+              'Rfid Labeling Machine': '/label-printing-and-cutting-machines/rfid-labeling-machine',
+              'Flexographic Inks': '/flexo-inks',
+            };
 
-              {/* Card Body */}
-              <div className="product-card-body">
-                <p className="product-card-category">{product.category}</p>
-                <h3 className="product-card-title">{product.title}</h3>
-                <p className="product-card-description">{product.description}</p>
+            const href = routes[product.title] ?? undefined;
 
-                {/* Feature list */}
-                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 1.25rem', display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
-                  {product.features.map((feat) => (
-                    <li key={feat} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', color: 'var(--color-secondary)' }}>
-                      <span aria-hidden="true" style={{ color: 'var(--color-accent)', fontWeight: 700 }}>✓</span>
-                      {feat}
-                    </li>
-                  ))}
-                </ul>
-
-                {/* Card Footer */}
-                <div className="product-card-footer">
-                  <div className="product-card-price">
-                    {product.price}
-                    <span> {product.priceUnit}</span>
-                  </div>
-                  <a
-                    href="#contact"
-                    className="btn btn-primary"
-                    id={`btn-order-${product.id}`}
-                    aria-label={`Order ${product.title}`}
-                  >
-                    Order Now
-                  </a>
-                </div>
-              </div>
-            </article>
-          ))}
+            return (
+              <ProductCard key={product.id} product={product} href={href} hideDetails={true} />
+            );
+          })}
         </div>
 
         {/* View All CTA */}

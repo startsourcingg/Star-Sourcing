@@ -17,12 +17,12 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "PTP Solutions — Premium Printing Services",
+  title: "Start Sourcing — Premium Printing Services",
   description:
-    "PTP Solutions delivers world-class commercial printing: business cards, brochures, banners, packaging, and large-format printing. Quality you can feel, precision you can trust.",
-  keywords: "printing services, business cards, brochures, banners, packaging, commercial printing, PTP Solutions",
+    "Start Sourcing delivers world-class commercial printing: business cards, brochures, banners, packaging, and large-format printing. Quality you can feel, precision you can trust.",
+  keywords: "printing services, business cards, brochures, banners, packaging, commercial printing, Start Sourcing",
   openGraph: {
-    title: "PTP Solutions — Premium Printing Services",
+    title: "Start Sourcing — Premium Printing Services",
     description: "World-class commercial printing services. Quality you can feel.",
     type: "website",
   },

@@ -86,8 +86,8 @@ export default function Header() {
           <div className="top-bar-inner">
             <span>🖨️ Free shipping on orders over $150 — nationwide delivery</span>
             <div style={{ display: 'flex', gap: '1.5rem' }}>
-              <a href="tel:+10001234567">📞 (000) 123-4567</a>
-              <a href="mailto:hello@ptpsolutions.com">✉️ hello@ptpsolutions.com</a>
+              <a href="tel:+923214091144">📞 +923214091144</a>
+              <a href="mailto:starsourcing@yahoo.com">✉️ starsourcing@yahoo.com</a>
             </div>
           </div>
         </div>
@@ -99,19 +99,19 @@ export default function Header() {
           <div className="header-inner">
 
             {/* Logo */}
-            <Link href="#home" className="logo" aria-label="PTP Solutions — Home">
+              <Link href="#home" className="logo" aria-label="Start Sourcing — Home">
               {/* <div className="logo-icon-wrapper">
                 <Image
                   src="/ptp-logo.png"
-                  alt="PTP Solutions logo"
+                  alt="Start Sourcing logo"
                   width={300}
                   height={71}
                   className="logo-icon"
                   priority
                 />
               </div> */}
-              <div className="logo-text">
-                <span className="brand-name">PTP Solutions</span>
+                <div className="logo-text">
+                <span className="brand-name">Start Sourcing</span>
                 <span className="brand-tagline">Print · Precision · Perfection</span>
               </div>
             </Link>

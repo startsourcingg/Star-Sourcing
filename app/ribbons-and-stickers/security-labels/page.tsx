@@ -1,9 +1,10 @@
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import ScrollReveal from '../../components/ScrollReveal';
+import ProductCard from '../../components/ProductCard';
 
 export const metadata = {
-  title: 'Security Labels | PTP Solutions',
+  title: 'Security Labels | Start Sourcing',
   description: 'Tamper-evident, holographic, and void security labels to protect your products and brand.',
 };
 
@@ -76,6 +77,58 @@ export default function SecurityLabelsPage() {
           </div>
         </section>
 
+        {/* ── Featured Security Products (single 4-card grid) ───────────────── */}
+        <section className="section">
+          <div className="container">
+            <div className="section-header js-reveal">
+              <h3>Featured Security Products</h3>
+              <p style={{ marginTop: 8, color: 'var(--color-muted)' }}>Representative security label SKUs and options.</p>
+            </div>
+
+            <div className="grid-3 js-reveal-stagger" style={{ gap: '1rem' }}>
+              {[
+                { 
+                  id: 'holo-1', 
+                  title: 'Barcode Security Labels', 
+                  desc: 'Rainbow holographic seal for brand authentication', 
+                  image: '/Barcode Security Labels.png', 
+                  price: 'From $0.12/pc',
+                  features: ['Tamper-Evident: Reveals “VOID” or self-destructs when removed', 'Anti-Counterfeit: Includes serial numbers, barcodes, and optional holograms', 'Asset Tracking Ready: Unique identifiers for inventory and logistics', 'Durable Materials: Resistant to chemicals, heat, moisture, and', 'High-Resolution Barcodes:Ensures reliable scanning', 'Customizable: Size, color, logo, and code formats available', 'Optional EAS Compatibility: Works with retail anti-theft systems',],
+                 },
+                { 
+                  id: 'tamper-1', 
+                  title: 'CHECKPOINT LABEL (EAS)', 
+                  desc: 'Leaves VOID pattern on removal for tamper detection', 
+                  image: '/CHECKPOINT LABEL (EAS).png', 
+                  price: 'From $0.08/pc',
+                  features: ['EAS-Integrated: Fully compatible with RF-based Checkpoint security systems', 'Anti-Theft Assurance: Deters theft and reduces shrinkage without disrupting the shopper’s experience', 'Retail-Ready Design: Sleek, low-profile form factor that blends with product packaging', 'Easy to Apply, Hard to Defeat: Fast application via manual or automated processes, with strong adhesion', 'Customizable Sizes & Formats: Available in rolls or sheets to match your packaging workflow', 'Non-Intrusive: Lightweight and discreet—does not affect product presentation or branding',],
+                 },
+                { 
+                  id: 'destruct-1', 
+                  title: 'NFC-Enabled Labels', 
+                  desc: 'Shatters on removal—ideal for warranty & tamper proofing', 
+                  image: '/NFC-Enabled Labels.png', 
+                  price: 'From $0.15/pc',
+                  features: ['Embedded NFC Technology: Enables fast, wireless communication with NFC-enabled mobile devices', 'Tamper-Evident Protection: Clearly indicates unauthorized access, removal, or interference', 'Custom Data Encoding: Supports security, authentication, tracking, and marketing applications', 'Universal Smartphone Compatibility: Works seamlessly with Android and iOS NFC-enabled devices', 'Strong Adhesive Backing: Provides durable, long-lasting attachment to a wide range of surfaces', 'Custom Printing & Branding Options: Personalize labels with logos, designs, and brand information',],
+                 },
+                { 
+                  id: 'qr-1', 
+                  title: 'RFID Security Label', 
+                  desc: 'QR + security features for digital verification', 
+                  image: '/RFID Security Label.png', 
+                  price: 'From $0.20/pc',
+                  features: ['Integrated RFID Technology: Enables non-line-of-sight scanning and real-time asset tracking', 'Tamper-Evident Security: Instantly reveals signs of unauthorized access or interference', 'Customizable Frequency Options: Available in UHF, HF, or NFC formats to suit specific applications', 'High-Performance Adhesive: Ensures strong, long-lasting bonding across various surfaces', 'Custom Identification & Branding: Supports barcodes, serial numbers, logos, and branded designs', 'Secure Data Encoding: Protects against cloning, tampering, and unauthorized access',],
+                 },
+              ].map((p) => (
+                <ProductCard
+                  key={p.id}
+                  product={{ id: p.id, title: p.title, description: p.desc, image: p.image, price: p.price, features: (p as any).features }}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ── How It Works ───────────────────────────── */}
         <section className="section section--surface">
           <div className="container">
@@ -118,33 +171,7 @@ export default function SecurityLabelsPage() {
           </div>
         </section>
 
-        {/* ── Specs ──────────────────────────────────── */}
-        <section className="section section--surface">
-          <div className="container">
-            <div className="section-header js-reveal">
-              <span className="eyebrow">Technical Data</span>
-              <h2>Security Label Specifications</h2>
-            </div>
-            <div className="js-reveal" style={{ overflowX: 'auto' }}>
-              <table>
-                <thead>
-                  <tr><th>Label Type</th><th>Size Range</th><th>Substrate</th><th>Adhesive</th><th>Min Order</th></tr>
-                </thead>
-                <tbody>
-                  {[
-                    ['Holographic', '15×15mm – 100×60mm', 'Metallic PET', 'Permanent', '1,000 pcs'],
-                    ['Tamper-Evident', '20×10mm – 150×80mm', 'VOID Material', 'Aggressive', '500 pcs'],
-                    ['Void Labels', '20×10mm – 100×50mm', 'Polyester', 'Aggressive', '500 pcs'],
-                    ['Destructible', '30×15mm – 100×50mm', 'Brittle Vinyl', 'Permanent', '1,000 pcs'],
-                    ['QR Security', '20×20mm – 80×80mm', 'Gloss BOPP', 'Permanent', '200 pcs'],
-                  ].map((row) => (
-                    <tr key={row[0]}>{row.map((cell, i) => <td key={i}>{i === 0 ? <strong>{cell}</strong> : cell}</td>)}</tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
+        {/* Security Label Specifications removed */}
 
         {/* ── CTA ────────────────────────────────────── */}
         <section className="section section--dark">

@@ -1,9 +1,10 @@
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import ScrollReveal from '../../components/ScrollReveal';
+import ProductCard from '../../components/ProductCard';
 
 export const metadata = {
-  title: 'Barcode Stickers | PTP Solutions',
+  title: 'Barcode Stickers | Start Sourcing',
   description: 'Precision-printed scannable barcode and QR code stickers for retail, inventory, and logistics.',
 };
 
@@ -76,6 +77,74 @@ export default function BarcodeStickersPage() {
           </div>
         </section>
 
+        {/* ── Featured Barcode Products (single 6-card grid) ───────────────── */}
+        <section className="section">
+          <div className="container">
+            <div className="section-header js-reveal">
+              <h3>Featured Barcode Stickers</h3>
+              <p style={{ marginTop: 8, color: 'var(--color-muted)' }}>Common barcode sticker SKUs across substrates.</p>
+            </div>
+
+            <div className="grid-3 js-reveal-stagger" style={{ gap: '1rem' }}>
+              {[
+                { 
+                  id: 'ean-1', 
+                  title: 'Asset Tag Barcode Stickers', 
+                  desc: 'Retail-ready gloss paper barcode stickers', 
+                  image: '/Asset Tag Barcode Stickers.png', 
+                  price: 'From $0.05/pc',
+                  features: ['Durable Construction: Built for long-lasting performance in demanding environments', 'High-Quality Barcode Printing: Ensures fast, accurate, and reliable scanning', 'Strong Adhesive Backing: Securely adheres to metal, plastic, glass, and other surfaces', 'Customizable Identification Options: Add asset numbers, QR codes, logos, or contact information', 'Resistant to Harsh Conditions: Withstands moisture, abrasion, chemicals, and temperature fluctuations', 'Multiple Material Choices: Available in paper, polyester, and tamper-evident formats',],
+                 },
+                { 
+                  id: 'qr-1', 
+                  title: 'Paper Barcode Stickers', 
+                  desc: 'Waterproof BOPP QR stickers for packaging', 
+                  image: '/Paper Barcode Stickers.png', 
+                  price: 'From $0.07/pc',
+                  features: ['High-Resolution Print Quality: Delivers accurate, reliable, and fast barcode scanning', 'Wide Printer Compatibility: Works with thermal transfer, inkjet, and laser printing systems', 'Flexible Customization Options: Available in various sizes, shapes, and adhesive strengths', 'Versatile Application Use: Ideal for packaging, inventory management, file labeling, and shipping', 'Custom Printing Capabilities: Supports logos, text, barcodes, and QR codes for branding and identification', 'Cost-Effective Solution: Budget-friendly choice for high-volume labeling requirements',],
+                 },
+                { 
+                  id: 'code128-1', 
+                  title: 'Permanent Adhesive Barcode Sticker', 
+                  desc: 'Durable polyester for industrial tracking', 
+                  image: '/Permanent Adhesive Barcode Sticker.png', 
+                  price: 'From $0.09/pc',
+                  features: ['Strong Permanent Adhesive: Ensures secure, long-lasting application on various surfaces', 'Multi-Printer Compatibility: Works seamlessly with thermal transfer, laser, and inkjet printers', 'High Print Clarity: Delivers sharp, accurate barcode output for fast scanning', 'Durability Against Wear: Resistant to moisture, abrasion, and daily handling', 'Material Flexibility: Available in paper, vinyl, and synthetic material options', 'Fully Customizable: Supports custom sizes, shapes, and variable data printing',],
+                 },
+                { 
+                  id: 'datamatrix-1', 
+                  title: 'PVC Barcode Stickers', 
+                  desc: 'High-density DataMatrix for tiny parts', 
+                  image: '/PVC Barcode Stickers.png', 
+                  price: 'From $0.11/pc',
+                  features: ['Premium PVC Construction: Ensures maximum durability and strong weather resistance', 'High-Resolution Barcode Printing: Enables fast, accurate, and error-free scanning', 'Multi-Condition Resistance: Water-resistant, tear-proof, and chemical-resistant surface', 'Wide Printing Compatibility: Works with thermal transfer and digital printing systems', 'Strong Adhesive Backing: Provides secure attachment on both smooth and rough surfaces', 'Fully Customizable Options: Supports variable data, logos, serial numbers, and QR codes',],
+                 },
+                { 
+                  id: 'thermal-1', 
+                  title: 'Thermal Transfer Barcode Stickers', 
+                  desc: 'Thermal-transfer barcode roll (1 roll min)', 
+                  image: '/Thermal Transfer Barcode Stickers.png', 
+                  price: 'From $12/roll',
+                  features: ['High-Resolution Barcode Printing: Ensures sharp, accurate, and reliable scanning performance', 'Universal Printer Compatibility: Works with all major thermal transfer printers', 'Smudge & Fade Resistance: Maintains long-term readability and print quality', 'Material Flexibility: Available in paper or synthetic options based on application needs', 'Strong Adhesive Bonding: Ensures secure application on a wide range of surfaces', 'Fully Customizable: Supports variable data, QR codes, logos, and serial numbers',],
+                 },
+                { 
+                  id: 'direct-1', 
+                  title: 'Transparent Barcode Stickers', 
+                  desc: 'Direct thermal for shipping & logistics', 
+                  image: '/Transparent Barcode Stickers.png', 
+                  price: 'From $8/roll',
+                  features: ['Premium Transparent Film: Delivers a discreet, no-label appearance for clean product presentation', 'High-Definition Barcode Printing: Ensures fast, accurate, and reliable scanning performance', 'Strong Adhesive Bonding: Provides secure application on smooth, curved, and glossy surfaces', 'Moisture & Smudge Resistance: Maintains clarity and durability during everyday use and handling', 'Fully Customizable Options: Supports variable data, logos, and QR code integration', 'Multiple Sizes & Finishes: Available in a range of shapes, dimensions, and surface finishes',],
+                 },
+              ].map((p) => (
+                <ProductCard
+                  key={p.id}
+                  product={{ id: p.id, title: p.title, description: p.desc, image: p.image, price: p.price, features: (p as any).features }}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ── Material Options ───────────────────────── */}
         <section className="section section--surface">
           <div className="container">
@@ -102,33 +171,7 @@ export default function BarcodeStickersPage() {
           </div>
         </section>
 
-        {/* ── Specs ──────────────────────────────────── */}
-        <section className="section">
-          <div className="container">
-            <div className="section-header js-reveal">
-              <span className="eyebrow">Technical Data</span>
-              <h2>Barcode Sticker Specifications</h2>
-            </div>
-            <div className="js-reveal" style={{ overflowX: 'auto' }}>
-              <table>
-                <thead>
-                  <tr><th>Type</th><th>Size Range</th><th>Material</th><th>Min Order</th><th>Print Method</th></tr>
-                </thead>
-                <tbody>
-                  {[
-                    ['EAN / UPC', '30×20mm – 100×60mm', 'Gloss / Matte Paper', '500 pcs', 'Digital / Thermal'],
-                    ['QR Code', '20×20mm – 200×200mm', 'BOPP / Paper', '200 pcs', 'Digital'],
-                    ['Code 128', '25×10mm – 150×50mm', 'Paper / Polyester', '500 pcs', 'Thermal Transfer'],
-                    ['DataMatrix', '5×5mm – 50×50mm', 'Polyester', '1000 pcs', 'Digital / Laser'],
-                    ['Thermal Labels', 'Custom', 'Direct / Transfer Thermal', '1 Roll', 'Thermal'],
-                  ].map((row) => (
-                    <tr key={row[0]}>{row.map((cell, i) => <td key={i}>{i === 0 ? <strong>{cell}</strong> : cell}</td>)}</tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
+        {/* Barcode Sticker Specifications removed */}
 
         {/* ── CTA ────────────────────────────────────── */}
         <section className="section section--dark">

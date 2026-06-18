@@ -1,9 +1,11 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ScrollReveal from '../components/ScrollReveal';
+import ProductCard from '../components/ProductCard';
+import { features } from 'process';
 
 export const metadata = {
-  title: 'Label Cloth Jumbo Roll | PTP Solutions',
+  title: 'Label Cloth Jumbo Roll | Start Sourcing',
   description: 'Premium woven and non-woven label cloth jumbo rolls for garment, textile, and industrial labeling.',
 };
 
@@ -83,6 +85,51 @@ export default function LabelClothJumboRollPage() {
                 </div>
               ))}
             </div>
+            {/* Four Product Cards for Label Cloth */}
+            <div style={{ marginTop: '2rem' }} className="js-reveal">
+              <h3 style={{ marginBottom: '1rem' }}>Featured Label Cloth Products</h3>
+              <div className="grid-3 js-reveal-stagger" style={{ gap: '1.25rem' }}>
+                {[
+                  { 
+                    id: 'woven-premium', 
+                    title: '36″ TYVEK LABEL ROLL', 
+                    desc: 'ITEM: TYVEK LABEL', 
+                    image: '/36″ TYVEK LABEL ROLL.png', 
+                    price: 'From $29',
+                    features: ['ITEM: TYVEK LABEL', 'COLOUR: WHITE', 'SIZE: 36″ X 200 METER', 'MATERIAL NAME: TYVEK', 'CLASSIFICATION: NORMAL/ FOR USE ON OFFSET PRINTING MACHINE', 'CORE SIZE: 76MM', 'BRAND: Star Sourcing'],
+                  },
+                  { 
+                    id: 'satin-finish', 
+                    title: '56″ TEARAWAY LABEL ROLL', 
+                    desc: 'Soft satin finish for luxury garments', 
+                    image: '/56″ TEARAWAY LABEL ROLL.png', 
+                    price: 'From $49' ,
+                    features: ['ITEM: LABEL Cloth', 'COLOUR: WHITE', 'SIZE: 64″ X 200 METER', 'MATERIAL NAME: NYLON TAFFETTA', 'CLASSIFICATION: NORMAL/ FOR USE ON OFFSET PRINTING MACHINE', 'CORE SIZE: 76MM', 'BRAND: Star Sourcing'],
+                  },
+                  { 
+                    id: 'heat-transfer-soft', 
+                    title: '63″ SATIN LABEL ROLL', 
+                    desc: 'Tagless heat-transfer rolls for comfort', 
+                    image: '/63″ SATIN LABEL ROLL.png', 
+                    price: 'From $39' ,
+                    features: ['ITEM: LABEL Cloth', 'COLOUR: WHITE', 'SIZE: 64″ X 200 METER', 'MATERIAL NAME: NYLON TAFFETTA', 'CLASSIFICATION: NORMAL/ FOR USE ON OFFSET PRINTING MACHINE', 'CORE SIZE: 76MM', 'BRAND: Star Sourcing'],
+                  },
+                  { 
+                    id: 'taffeta-durable', 
+                    title: '64″ JUMBO ROLL LABEL CLOTH', 
+                    desc: 'Durable taffeta for care & size labels', 
+                    image: '/64″ JUMBO ROLL LABEL CLOTH.png', 
+                    price: 'From $34' ,
+                    features: ['ITEM: SATIN LABEL', 'COLOUR: WHITE', 'SIZE: 63″ X 200 METER', 'MATERIAL NAME: POLYESTER SATIN', 'CLASSIFICATION: NORMAL/ FOR USE ON OFFSET PRINTING MACHINE', 'CORE SIZE: 76MM', 'BRAND: Star Sourcing'],
+                  },
+                ].map((p) => (
+                  <ProductCard
+                    key={p.id}
+                    product={{ id: p.id, title: p.title, description: p.desc, image: p.image, price: p.price, features: (p as any).features }}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
@@ -113,37 +160,7 @@ export default function LabelClothJumboRollPage() {
           </div>
         </section>
 
-        {/* ── Specs Table ────────────────────────────── */}
-        <section className="section">
-          <div className="container">
-            <div className="section-header js-reveal">
-              <span className="eyebrow">Specifications</span>
-              <h2>Technical Data Sheet</h2>
-            </div>
-            <div className="js-reveal" style={{ overflowX: 'auto' }}>
-              <table>
-                <thead>
-                  <tr><th>Property</th><th>Woven</th><th>Non-Woven</th><th>Heat-Transfer</th><th>Satin</th></tr>
-                </thead>
-                <tbody>
-                  {[
-                    ['Width Range', '10–500mm', '10–300mm', '20–200mm', '6–150mm'],
-                    ['Roll Length', 'Up to 5000m', 'Up to 8000m', 'Up to 3000m', 'Up to 6000m'],
-                    ['Material', 'Polyester / Nylon', 'Polypropylene', 'PU Film', 'Polyester'],
-                    ['Colors', 'Up to 12', 'Up to 8', 'Full CMYK', 'Up to 8'],
-                    ['Washability', '60°C certified', '40°C certified', '60°C certified', '60°C certified'],
-                    ['MOQ', '1000m/roll', '500m/roll', '500m/roll', '500m/roll'],
-                  ].map(([prop, ...vals]) => (
-                    <tr key={prop}>
-                      <td><strong>{prop}</strong></td>
-                      {vals.map((v, i) => <td key={i}>{v}</td>)}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
+        {/* Technical Data Sheet removed */}
 
         {/* ── Industries ─────────────────────────────── */}
         <section className="section section--surface">

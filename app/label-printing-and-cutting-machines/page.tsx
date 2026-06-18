@@ -4,7 +4,7 @@ import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Label Printing And Cutting Machines | PTP Solutions',
+  title: 'Label Printing And Cutting Machines | Start Sourcing',
   description: 'Industrial label printing, ultrasonic cutting, and RFID labeling machines for every production scale.',
 };
 
@@ -109,7 +109,7 @@ export default function LabelPrintingMachinesPage() {
         <section className="section">
           <div className="container">
             <div className="section-header js-reveal">
-              <span className="eyebrow">Why PTP Solutions</span>
+              <span className="eyebrow">Why Start Sourcing</span>
               <h2>More Than a Machine — A Complete Solution</h2>
             </div>
             <div className="js-reveal-stagger" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '2rem' }}>

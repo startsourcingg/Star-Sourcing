@@ -29,7 +29,7 @@ export default function CTASection() {
             </h2>
 
             <p>
-              Join over 5,000 businesses that trust PTP Solutions for premium commercial
+              Join over 5,000 businesses that trust Start Sourcing for premium commercial
               printing. Get a tailored quote — no commitment required.
             </p>
 
@@ -40,8 +40,8 @@ export default function CTASection() {
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </a>
-              <a href="tel:+10001234567" className="btn btn-outline-white btn-lg" id="btn-cta-call">
-                📞 Call (000) 123-4567
+              <a href="tel:+923214091144" className="btn btn-outline-white btn-lg" id="btn-cta-call">
+                📞 +923214091144
               </a>
             </div>
 
@@ -117,8 +117,8 @@ export default function CTASection() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                 {[
                   { icon: '📍', label: 'Address', value: '123 Print Avenue, Suite 400\nNew York, NY 10001' },
-                  { icon: '📞', label: 'Phone', value: '(000) 123-4567' },
-                  { icon: '✉️', label: 'Email', value: 'hello@ptpsolutions.com' },
+                  { icon: '📞', label: 'Phone', value: '+923214091144' },
+                  { icon: '✉️', label: 'Email', value: 'starsourcing@yahoo.com' },
                   { icon: '🕒', label: 'Hours', value: 'Mon–Fri: 8am–7pm EST\nSaturday: 9am–4pm EST' },
                 ].map((item) => (
                   <div key={item.label} className="footer-contact-item" style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
@@ -146,6 +146,7 @@ export default function CTASection() {
                 }}
                 onSubmit={(e) => e.preventDefault()}
               >
+                <input type="hidden" id="input-product-hidden" name="product" />
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
                   <div className="form-group">
                     <label className="form-label" htmlFor="input-first-name">First Name</label>

@@ -3,12 +3,15 @@ import Link from 'next/link';
 
 const footerLinks = {
   products: [
-    { label: 'Business Cards', href: '#products' },
-    { label: 'Brochures', href: '#products' },
-    { label: 'Banners & Signage', href: '#products' },
-    { label: 'Custom Packaging', href: '#products' },
-    { label: 'Flyers & Leaflets', href: '#products' },
-    { label: 'Stickers & Labels', href: '#products' },
+    { label: 'Label Cloth Jumbo Roll', href: '#products' },
+    { label: 'Ribbon Labels', href: '#products' },
+    { label: 'Barcode Stickers', href: '#products' },
+    { label: 'Security Labels', href: '#products' },
+    { label: 'Label Cutting Machine', href: '#products' },
+    { label: 'Label Printing Machine', href: '#products' },
+    { label: 'Ultrasonic Cutting Machine', href: '#products' },
+    { label: 'Rfid Labeling Machine', href: '#products' },
+    { label: 'Flexographic Inks', href: '#products' },
   ],
   company: [
     { label: 'About Us', href: '#about' },
@@ -47,17 +50,17 @@ export default function Footer() {
 
             {/* Brand column */}
             <div>
-              <Link href="#home" className="footer-brand-logo" aria-label="PTP Solutions — Home">
+              <Link href="#home" className="footer-brand-logo" aria-label="Start Sourcing — Home">
                 <div className="logo-icon-wrapper logo-icon-wrapper--footer">
                   <Image
                     src="/ptp-logo.png"
-                    alt="PTP Solutions"
+                    alt="Start Sourcing"
                     width={52}
                     height={52}
                     className="logo-icon logo-icon--footer"
                   />
                 </div>
-                <span className="footer-brand-name">PTP Solutions</span>
+                <span className="footer-brand-name">Start Sourcing</span>
               </Link>
 
               <p className="footer-description">
@@ -139,11 +142,11 @@ export default function Footer() {
               <h3 className="footer-heading" style={{ marginTop: '1.5rem' }}>Contact</h3>
               <div className="footer-contact-item">
                 <span className="icon" aria-hidden="true">📞</span>
-                <a href="tel:+10001234567" style={{ color: '#999999' }}>(000) 123-4567</a>
+                <a href="tel:+923214091144" style={{ color: '#999999' }}>+923214091144</a>
               </div>
               <div className="footer-contact-item">
                 <span className="icon" aria-hidden="true">✉️</span>
-                <a href="mailto:hello@ptpsolutions.com" style={{ color: '#999999' }}>hello@ptpsolutions.com</a>
+                <a href="mailto:starsourcing@yahoo.com" style={{ color: '#999999' }}>starsourcing@yahoo.com</a>
               </div>
               <div className="footer-contact-item" style={{ alignItems: 'flex-start' }}>
                 <span className="icon" aria-hidden="true">📍</span>
@@ -163,8 +166,8 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="container">
           <div className="footer-bottom-inner">
-            <p style={{ margin: 0 }}>
-              © {year} PTP Solutions. All rights reserved.
+              <p style={{ margin: 0 }}>
+              © {year} Start Sourcing. All rights reserved.
             </p>
             <nav className="footer-bottom-links" aria-label="Legal navigation">
               <a href="#" id="link-privacy-policy">Privacy Policy</a>

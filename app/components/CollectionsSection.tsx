@@ -4,7 +4,7 @@ const collections = [
   {
     id: 'business-stationery',
     eyebrow: 'Corporate',
-    title: 'Business Stationery',
+    title: 'Label Cloth Jumbo Roll',
     count: '24 products',
     image: '/product-business-cards.png',
     size: 'large',
@@ -13,7 +13,7 @@ const collections = [
   {
     id: 'marketing-materials',
     eyebrow: 'Marketing',
-    title: 'Marketing Materials',
+    title: 'Ribbon Labels',
     count: '18 products',
     image: '/product-brochure.png',
     size: 'tall',
@@ -22,7 +22,7 @@ const collections = [
   {
     id: 'large-format',
     eyebrow: 'Events',
-    title: 'Large Format Printing',
+    title: 'Barcode Sticker',
     count: '12 products',
     image: '/product-banner.png',
     size: 'medium',

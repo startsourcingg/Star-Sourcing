@@ -87,8 +87,8 @@ export default function ProcessSection() {
             <a href="#contact" className="btn btn-primary btn-lg" id="btn-start-project">
               Start My Project
             </a>
-            <a href="tel:+10001234567" className="btn btn-outline" id="btn-call-us">
-              📞 Call Us
+            <a href="tel:+923214091144" className="btn btn-outline" id="btn-call-us">
+              📞 +923214091144
             </a>
           </div>
         </div>

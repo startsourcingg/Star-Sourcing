@@ -1,13 +1,23 @@
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import ScrollReveal from '../../components/ScrollReveal';
+import ProductCard from '../../components/ProductCard';
 
 export const metadata = {
-  title: 'Ribbon Labels | PTP Solutions',
+  title: 'Ribbon Labels | Start Sourcing',
   description: 'Premium satin, grosgrain, and taffeta ribbon labels for garments, gifts, and retail products.',
 };
 
 export default function RibbonLabelsPage() {
+  const types = [
+    { icon: '✨', title: 'Satin Ribbon Labels', desc: 'Smooth, lustrous satin with vivid color printing. A premium choice for fashion and luxury brands.' },
+    { icon: '🏷️', title: 'Grosgrain Labels', desc: 'Sturdy ribbed texture ideal for outdoor gear, luggage, and workwear requiring durable labeling.' },
+    { icon: '👗', title: 'Taffeta Labels', desc: 'Lightweight, crisp — the industry standard for garment care and size labels.' },
+    { icon: '🎨', title: 'Damask Woven', desc: 'Ultra-fine woven labels with intricate designs and razor-sharp text. The hallmark of luxury apparel.' },
+    { icon: '🖨️', title: 'Printed Ribbon', desc: 'Full-color digital or screen-printed ribbon labels for any design at any scale.' },
+    { icon: '📐', title: 'Die-Cut Shapes', desc: 'Straight-cut, mitre-cut, book-fold, or Manhattan fold — custom shapes for any application.' },
+  ];
+
   return (
     <>
       <ScrollReveal />
@@ -62,6 +72,58 @@ export default function RibbonLabelsPage() {
           </div>
         </section>
 
+        {/* ── Featured Ribbon Products (single 4-card grid) ───────────────── */}
+        <section className="section">
+          <div className="container">
+            <div className="section-header js-reveal">
+              <h3>Featured Ribbon Products</h3>
+              <p style={{ marginTop: 8, color: 'var(--color-muted)' }}>Hand-picked ribbon products for popular use-cases.</p>
+            </div>
+
+            <div className="grid-3 js-reveal-stagger" style={{ gap: '1rem' }}>
+              {[
+                { 
+                  id: 'satin-1',
+                  title: 'DOUBLE SIDE SLITTED RIBBON LABEL', 
+                  desc: 'Premium satin ribbon for luxury packaging', 
+                  image: '/DOUBLE SIDE SLITTED RIBBON LABEL.png', 
+                  price: 'From $29',
+                  features: ['ITEM: SATIN LABEL', 'COLOUR: WHITE', 'SIZE: (W)MM 25, 30, 35, 38, 40', 'SIZE: 200 METER', 'MATERIAL NAME: NYLON TAFFETTA', 'CLASSIFICATION: NORMAL/ FOR USE ON FLEXO AND ROTARY LABEL PRINTING MACHINE', 'CORE SIZE: 76MM', 'BRAND: Star Sourcing'],
+                 },
+                { 
+                  id: 'grosgrain-1', 
+                  title: 'DOUBLE SIDE WOVEN EDGE RIBBON LABEL', 
+                  desc: 'Durable grosgrain for labels and trims', 
+                  image: '/DOUBLE SIDE WOVEN EDGE RIBBON LABEL.png', 
+                  price: 'From $34',
+                  features: ['ITEM: DOUBLE SIDE WOVEN EDGE SATIN', 'COLOUR: WHITE', 'SIZE: (W)MM 25, 30, 32, 35, 38', 'SIZE: 200 METER', 'MATERIAL NAME: POLYESTER SATIN', 'CLASSIFICATION: NORMAL/ FOR USE ON FLEXO AND ROTARY LABEL PRINTING MACHINE', 'CORE SIZE: 76MM', 'BRAND: Star Sourcing'],
+                },
+                { 
+                  id: 'taffeta-1', 
+                  title: 'SINGLE SIDE SLITTED RIBBON LABEL', 
+                  desc: 'Lightweight taffeta for garment tags', 
+                  image: '/SINGLE SIDE SLITTED RIBBON LABEL.png', 
+                  price: 'From $27',
+                  features: ['ITEM: SINGLE SIDE SLITTED SATIN', 'COLOUR: WHITE', 'SIZE: (W)MM 19, 25, 32, 35, 38, 45, 50, 55, 60', 'SIZE: 200 METER', 'MATERIAL NAME: NAME POLYESTER SATIN', 'CLASSIFICATION: NORMAL/ FOR USE ON FLEXO AND ROTARY LABEL PRINTING MACHINE', 'CORE SIZE: 76MM', 'BRAND: Star Sourcing'],
+                },
+                { 
+                  id: 'printed-1', 
+                  title: 'SINGLE SIDE WOVEN LABEL', 
+                  desc: 'Full-color printed ribbon for branding', 
+                  image: '/SINGLE SIDE WOVEN LABEL.png', 
+                  price: 'From $39',
+                   features: ['ITEM: SINGLE SIDE WOVEN EDGE SATIN', 'COLOUR: WHITE', 'SIZE: (W)MM 10, 20, 25, 30, 32, 35, 38, 40', 'SIZE: 200 METER MATERIAL', 'MATERIAL NAME: POLYESTER SATIN', 'CLASSIFICATION: NORMAL/ FOR USE ON FLEXO AND ROTARY LABEL PRINTING MACHINE', 'CORE SIZE: 76MM', 'BRAND: Star Sourcing'],
+                },
+              ].map((p) => (
+                <ProductCard
+                  key={p.id}
+                  product={{ id: p.id, title: p.title, description: p.desc, image: p.image, price: p.price, features: (p as any).features }}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ── Fold Types ─────────────────────────────── */}
         <section className="section section--surface">
           <div className="container">
@@ -80,33 +142,7 @@ export default function RibbonLabelsPage() {
           </div>
         </section>
 
-        {/* ── Specs ──────────────────────────────────── */}
-        <section className="section">
-          <div className="container">
-            <div className="section-header js-reveal">
-              <span className="eyebrow">Technical Data</span>
-              <h2>Ribbon Label Specifications</h2>
-            </div>
-            <div className="js-reveal" style={{ overflowX: 'auto' }}>
-              <table>
-                <thead>
-                  <tr><th>Type</th><th>Width</th><th>Colors</th><th>Min Order</th><th>Washability</th><th>Turnaround</th></tr>
-                </thead>
-                <tbody>
-                  {[
-                    ['Satin', '6–150mm', 'Up to 8', '500 pcs', '60°C', '7–10 days'],
-                    ['Grosgrain', '10–100mm', 'Up to 6', '500 pcs', '60°C', '7–10 days'],
-                    ['Taffeta', '6–50mm', 'Up to 12', '1000 pcs', '95°C', '5–7 days'],
-                    ['Damask', '10–80mm', 'Up to 16', '500 pcs', '60°C', '10–14 days'],
-                    ['Printed', '10–200mm', 'Full CMYK', '200 pcs', '40°C', '3–5 days'],
-                  ].map((row) => (
-                    <tr key={row[0]}>{row.map((cell, i) => <td key={i}>{i === 0 ? <strong>{cell}</strong> : cell}</td>)}</tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
+        {/* Ribbon Label Specifications removed */}
 
         {/* ── Process ────────────────────────────────── */}
         <section className="section section--surface">

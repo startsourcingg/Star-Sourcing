@@ -4,7 +4,7 @@ import ScrollReveal from '../components/ScrollReveal';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Ribbons And Stickers | PTP Solutions',
+  title: 'Ribbons And Stickers | Start Sourcing',
   description: 'Explore ribbon labels, security labels, and barcode stickers for every industry.',
 };
 
@@ -67,7 +67,7 @@ export default function RibbonsAndStickersPage() {
         <section className="section section--surface">
           <div className="container">
             <div className="section-header js-reveal">
-              <span className="eyebrow">Why PTP Solutions</span>
+              <span className="eyebrow">Why Start Sourcing</span>
               <h2>Quality at Every Scale</h2>
             </div>
             <div className="js-reveal" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0', border: '1px solid var(--color-border)', borderRadius: 'var(--radius-lg)', overflow: 'hidden' }}>

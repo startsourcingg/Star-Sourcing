@@ -1,9 +1,10 @@
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import ScrollReveal from '../../components/ScrollReveal';
+import ProductCard from '../../components/ProductCard';
 
 export const metadata = {
-  title: 'RFID Labeling Machine | PTP Solutions',
+  title: 'RFID Labeling Machine | Start Sourcing',
   description: 'Automated RFID encoding and label application machines for smart inventory and supply chain management.',
 };
 
@@ -31,6 +32,74 @@ export default function RFIDLabelingMachinePage() {
             <div className="js-reveal" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="/#contact" className="btn btn-accent btn-lg">Request a Demo</a>
               <a href="#features" className="btn btn-outline-white btn-lg">Explore Technology</a>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Featured RFID Products (6 cards) ───────────────────── */}
+        <section className="section">
+          <div className="container">
+            <div className="section-header js-reveal">
+              <h3>Featured RFID Solutions</h3>
+              <p style={{ marginTop: 8, color: 'var(--color-muted)' }}>Sample RFID applicators, encoders, and verification modules.</p>
+            </div>
+
+            <div className="grid-3 js-reveal-stagger" style={{ gap: '1rem' }}>
+              {[
+                { 
+                  id: 'rfid-print-1', 
+                  title: 'DR EAS Label All In One Machine', 
+                  desc: 'Combined printer-encoder for label production lines', 
+                  image: '/DR EAS Label All In One Machine.jpg', 
+                  price: 'Contact for price',
+                  features: ['Integrated Folding, Sealing & Application System: Combines multiple processes for streamlined label production', 'High-Speed Output Capability: Processes up to 300 labels per minute for efficient mass production', 'Wide DR EAS Label Compatibility: Supports various sizes and material types', 'Automatic Feeding & Alignment System: Ensures precise positioning and smooth material flow', 'Real-Time Label Detection & Correction: Improves accuracy and reduces production errors', 'User-Friendly Touchscreen Interface: Simplifies operation and machine control', 'Automatic Counting & Batch Separation: Enhances production tracking and organization', 'Quick Format Changeover: Allows fast switching between different label formats', 'Production Line Integration: Easily connects with existing manufacturing workflows', 'Built-in Safety System: Includes emergency stop buttons and advanced safety sensors',],
+                 },
+                { 
+                  id: 'rfid-app-1', 
+                  title: 'NC RFID Tag Bonding Machine', 
+                  desc: 'High-precision applicator for cartons and units', 
+                  image: '/NC RFID Tag Bonding Machine.jpg', 
+                  price: 'Contact for price',
+                  features: ['Low-Noise High-Speed Design: Enables efficient operation with reduced sound levels', 'High-Precision Servo Motor System: Ensures accurate label transfer and registration', 'Imported Detection Sensors: Provides precise label bonding and material supplementation control', 'Anti-Static Worktable: Protects RFID chips from electrostatic damage during operation', 'NC Touchscreen Control System: Offers smart, intuitive operation and easy maintenance', 'Wide RFID Compatibility: Supports bonding and printing of various RFID label shapes and sizes', 'CNC-Based Precision Technology: Delivers consistent accuracy and high production efficiency', 'Industrial Application Suitability: Ideal for logistics, warehousing, and supply chain operations',],
+                 },
+                { 
+                  id: 'rfid-encoder-1', 
+                  title: 'RFID Coding Machine', 
+                  desc: 'High-speed encoder for pre-programming rolls', 
+                  image: '/RFID Coding Machine.jpg', 
+                  price: 'Contact for price', 
+                  features: ['Versatile Tag Support: Compatible with a wide range of RFID tag types and formats', 'Flexible Data Handling: Supports dynamic data input and efficient encoding processes', 'User-Friendly Interface: Simplifies operation with an intuitive control system', 'High-Speed Multi-Tag Encoding: Enables fast processing of multiple RFID tags simultaneously', 'Error Checking & Data Integrity: Ensures accurate encoding and reliable data validation', 'Advanced Tag Programming: Supports complex RFID data structures and configurations', 'Seamless System Integration: Easily integrates with existing production and logistics systems',],
+                },
+                { 
+                  id: 'rfid-inspect-1', 
+                  title: 'RFID Label Printing Machine', 
+                  desc: 'Automated read-check and reject station', 
+                  image: '/RFID Label Printing Machine.jpg', 
+                  price: 'Contact for price',
+                  features: ['RFID Encoding & Printing in One Step: Combines labeling and encoding for streamlined workflow', 'High-Speed Production Capability: Achieves up to 15,000 labels per hour for mass production','Automatic Feeding & Precise Positioning: Ensures accurate label handling and placement', 'Multi-RFID Compatibility: Supports both passive and active RFID tags', 'UHF & HF Frequency Support: Works with multiple RFID communication standards', 'Multi-Format Data Handling: Compatible with ASCII, hexadecimal, and other encoding formats', 'Real-Time RFID Verification: Reads and validates data during production for accuracy', 'User-Friendly Touchscreen Interface: Simplifies operation and machine control', 'Automatic Cleaning System: Maintains consistent performance and reduces downtime', 'Industrial Application Use: Ideal for inventory, asset tracking, and access control systems',],
+                 },
+                { 
+                  id: 'rfid-handheld-1', 
+                  title: 'RFID Labeling Machine', 
+                  desc: 'Portable encoder for manual operations and overrides', 
+                  image: '/RFID Labeling Machine.jpg', 
+                  price: 'From $899',
+                  features: ['High Production Speed: Up to 60 meters per minute (maximum output)', 'High Precision Accuracy: Maintains ±0.3mm processing accuracy', 'Minimum Chip Width: Supports chip widths as small as 20mm', 'Large Unwind Capacity: Outer core dimension of Ø500mm for stable feeding', 'Maximum Unwind Diameter: Supports up to 650mm roll diameter', 'Material Compatibility: Designed for RFID chips and paper composite materials', 'Industrial Machine Dimensions: 7500 × 2500 × 2050mm footprint', 'High Power Requirement: Operates on 380V, 32KW industrial power supply', 'Heavy-Duty Build: Machine weight of 3000kg for stable industrial performance',],
+                 },
+                { 
+                  id: 'rfid-tunnel-1', 
+                  title: 'RFID Labeling Machine', 
+                  desc: 'High-sensitivity tunnel reader for conveyor systems', 
+                  image: '/RFID Labeling Machine 2.png', 
+                  price: 'Contact for price',
+                  features: ['Integrated RFID Encoding & Printing: Combines tag encoding with printing of text, graphics, and barcodes in a single process', 'High-Speed Processing Capability: Handles up to 200 labels per minute for efficient production', 'Multi-RFID Type Support: Compatible with passive, active, and semi-passive RFID tags', 'Wide Material Compatibility: Works with paper, plastic, cardboard, and metal-based label surfaces', 'Automatic Feeding & Alignment System: Ensures precise positioning and smooth continuous operation', 'Real-Time Error Detection & Correction: Automatically identifies and resolves encoding and printing issues', 'User-Friendly Control Interface: Allows easy adjustment of speed, tag position, and label size', 'Quick Changeover Functionality: Enables fast switching between different RFID tag types and label formats', 'ERP & Production Line Integration: Seamlessly connects with existing enterprise systems', 'Enhanced Safety System: Includes emergency stop, protective covers, and multiple safety sensors',],
+                 },
+              ].map((p) => (
+                <ProductCard
+                  key={p.id}
+                  product={{ id: p.id, title: p.title, description: p.desc, image: p.image, price: p.price, features: (p as any).features }}
+                />
+              ))}
             </div>
           </div>
         </section>
@@ -76,35 +145,7 @@ export default function RFIDLabelingMachinePage() {
           </div>
         </section>
 
-        {/* ── Specification Table ───────────────────────── */}
-        <section className="section section--surface">
-          <div className="container">
-            <div className="section-header js-reveal">
-              <span className="eyebrow">Technical Specs</span>
-              <h2>Frequency Bands & Capabilities</h2>
-              <p>Compare UHF and HF/NFC band configurations supported by our line of RFID labeling machinery.</p>
-            </div>
-            <div className="js-reveal" style={{ overflowX: 'auto' }}>
-              <table>
-                <thead>
-                  <tr><th>Specification</th><th>UHF (Ultra High Frequency)</th><th>HF (High Frequency) / NFC</th></tr>
-                </thead>
-                <tbody>
-                  {[
-                    ['Operating Frequency', '860 – 960 MHz (Global Bands)', '13.56 MHz'],
-                    ['Typical Read Range', 'Up to 10 Meters (Antenna Dependent)', '1 – 10 Centimeters'],
-                    ['Standard Protocols', 'EPC Class 1 Gen 2 / ISO 18000-6C', 'ISO 15693 / ISO 14443 Type A & B'],
-                    ['Maximum Encoding Rate', 'Up to 1,200 parts per minute', 'Up to 600 parts per minute'],
-                    ['Memory Structures', '96 – 512 bit EPC / User Memory', '1 KB – 64 KB High Security EEPROM'],
-                    ['Primary Verticals', 'Logistics, Shipping, Retail Apparel', 'Pharmaceuticals, Smart ticketing, Access'],
-                  ].map((row) => (
-                    <tr key={row[0]}>{row.map((cell, i) => <td key={i}>{i === 0 ? <strong>{cell}</strong> : cell}</td>)}</tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
+        {/* Frequency Bands & Capabilities removed */}
 
         {/* ── Process ────────────────────────────────── */}
         <section className="section">

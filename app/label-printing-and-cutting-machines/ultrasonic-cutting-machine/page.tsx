@@ -1,9 +1,10 @@
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import ScrollReveal from '../../components/ScrollReveal';
+import ProductCard from '../../components/ProductCard';
 
 export const metadata = {
-  title: 'Ultrasonic Cutting Machine | PTP Solutions',
+  title: 'Ultrasonic Cutting Machine | Start Sourcing',
   description: 'Precision ultrasonic cutting machines for clean, sealed edges on woven and synthetic labels.',
 };
 
@@ -31,6 +32,90 @@ export default function UltrasonicCuttingMachinePage() {
             <div className="js-reveal" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="/#contact" className="btn btn-accent btn-lg">Request a Demo</a>
               <a href="#advantages" className="btn btn-outline-white btn-lg">See the Advantages</a>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Featured Ultrasonic Products (8 cards) ───────────────────── */}
+        <section className="section">
+          <div className="container">
+            <div className="section-header js-reveal">
+              <h3>Featured Ultrasonic Cutting Products</h3>
+              <p style={{ marginTop: 8, color: 'var(--color-muted)' }}>Common ultrasonic cutting configurations and tooling options.</p>
+            </div>
+
+            <div className="grid-3 js-reveal-stagger" style={{ gap: '1rem' }}>
+              {[
+                { 
+                  id: 'rotary-1', 
+                  title: 'Automatic Label Cold Cutting Machine', 
+                  desc: 'Continuous rotary cutter for high throughput', 
+                  image: '/Automatic Label Cold Cutting Machine.png', 
+                  price: 'Contact for price',
+                  features: ['High-Speed Cutting Performance: Processes up to 300 labels per minute for efficient production', 'Advanced Cold Cutting Technology: Ensures clean, precise edges without material damage', 'Optional Automatic Stacker: Provides organized output and reduces manual labor requirements', 'User-Friendly PLC Touchscreen Control: Simplifies operation with intuitive controls', 'Wide Material Compatibility: Suitable for paper, plastic, and fabric labels', 'Durable Industrial Construction: Built for long-lasting performance and reliability', 'Easy Maintenance Design: Reduces downtime and simplifies servicing requirements', 'Versatile Industrial Application: Ideal for printing, packaging, and label manufacturing industries',],
+                 },
+                { 
+                  id: 'blade-1', 
+                  title: 'Automatic Ultrasonic Center Cutting And Folding Machine', 
+                  desc: 'Precision straight-cut system for narrow labels', 
+                  image: '/Automatic Ultrasonic Center Cutting And Folding Machine.jpg', 
+                  price: 'Contact for price',
+                  features: ['Ultrasonic Cutting Technology: Produces precise, clean, and sealed edges without fraying', 'Automatic Roller Feeding System: Ensures smooth, continuous material feeding with reduced waste', 'Touchscreen Control Panel: Enables easy adjustment of cutting length, folding width, speed, and blade count', 'Multiple Folding Modes: Supports center fold, end fold, and piece cut configurations', 'High-Speed Production Capability: Designed for rapid processing in large-scale manufacturing', 'Wide Material Compatibility: Works with polyester, nylon, satin, cotton, and woven tapes', 'Automatic Tension Control: Maintains consistent material tension throughout operation', 'Integrated Counting & Measurement: Provides accurate length tracking and production control', 'Labor-Saving Automation: Reduces manual effort and lowers overall production costs', 'Compact Industrial Design: Built for stable, long-term continuous operation',],
+                 },
+                { 
+                  id: 'multihead-1', 
+                  title: 'Automatic Ultrasonic Cutting Machine', 
+                  desc: 'Cuts 4 lanes simultaneously for jumbo rolls', 
+                  image: '/Automatic Ultrasonic Cutting Machine.jpg', 
+                  price: 'Contact for price',
+                  features: ['Ultrasonic Vibration Cutting: Delivers clean, precise, and sealed edges without deformation', 'Full Servo Motor Drive System: Ensures high-speed, stable, and accurate operation', 'Food-Grade Titanium Blade: Provides hygienic, durable, and long-lasting cutting performance', 'PLC Touchscreen Control Interface: Enables simple and intuitive machine operation', 'Wide Cutting Capacity: Supports cutting widths up to 700mm', 'High Cutting Height Range: Handles materials up to 130mm in height', 'Automatic Feeding & Collection System: Improves efficiency and reduces manual handling', 'Intelligent Fault Detection: Built-in alarm system for safe and reliable operation', 'Multi-Material Compatibility: Suitable for food, rubber, plastic, leather, textiles, and more', 'Low-Noise Energy-Efficient Design: Supports continuous 24/7 industrial performance',],
+                 },
+                { 
+                  id: 'stacker-1', 
+                  title: 'Book Cover Cut Fold Machine', 
+                  desc: 'Integrated stacking and counting module', 
+                  image: '/Book Cover Cut Fold Machine.jpg', 
+                  price: 'Contact for price',
+                  features: ['Triple Cutting Modes: Supports hot, cold, and ultrasonic cutting for versatile material processing', 'Multiple Folding Options: Enables end fold, center fold, envelope fold, book fold, and more', 'High-Precision Sensor System: Ensures accurate cutting, alignment, and automatic correction', 'Touchscreen Control Panel: Provides easy setup, real-time monitoring, and job memory storage', 'Fully Automatic Workflow: Automates feeding, folding, and stacking processes end-to-end', 'Customizable Machine Configuration: Supports optional double-sided heat pressing, counting, and adjustable folding units', 'Wide Material Compatibility: Works with satin, nylon, polyester, cotton, adhesive tape, and similar substrates', 'Heavy-Duty Industrial Construction: Built for long-term durability with minimal maintenance needs', 'Low Maintenance Operation: Designed for easy cleaning and reduced downtime', 'High Production Efficiency: Optimized for mass production with reduced labor requirements',],
+                 },
+                { 
+                  id: 'tooling-1', 
+                  title: 'Label Slitting Machine', 
+                  desc: 'Custom-shaped sonotrodes for specific label profiles', 
+                  image: '/Label Slitting Machine.jpg', 
+                  price: 'Contact for price',
+                  features: ['High-Precision Slitting System: Uses rotary or ultrasonic blades for clean and accurate cuts across label materials', 'Adjustable Blade Configuration: Allows flexible control of slit width and number of blades for different label sizes', 'Robust Feeding Mechanism: Ensures smooth, continuous material flow with stable tension and alignment', 'Advanced Web Guiding System: Automatically corrects alignment using sensors for consistent slitting accuracy', 'Touchscreen Control Interface: Enables easy adjustment of speed, blade pressure, and slit width', 'High-Speed Production Capability: Supports slitting up to 300 labels per minute for large-scale output', 'Wide Material Compatibility: Works with paper, film, synthetic materials, and adhesive-backed labels', 'Enhanced Safety System: Includes emergency stop, safety sensors, and protective covers', 'Low Maintenance Industrial Design: Built for durability and reduced operational downtime', 'Versatile Application Range: Suitable for barcode labels, RFID labels, adhesive tapes, and more',],
+                 },
+                { 
+                  id: 'inspection-1', 
+                  title: 'Satin Label Folding Machine', 
+                  desc: 'Vision inspection for cut accuracy and defects', 
+                  image: '/Satin Label Folding Machine.jpg', 
+                  price: 'Contact for price',
+                  features: ['Multi Cutting Modes: Supports hot, cold, and ultrasonic cutting for diverse material requirements', 'Multiple Folding Options: Includes end fold, center fold, envelope fold, book fold, and more', 'Touchscreen Control Panel: Provides easy setup, monitoring, and parameter adjustment', 'High-Precision Sensors with Auto Correction: Ensures accurate alignment and consistent output', 'Fully Automatic Workflow: Handles feeding, cutting, and folding without manual intervention', 'Automatic Counting System: Tracks production output in real time', 'Optional Double-Sided Heat Pressing: Improves durability and premium label finish', 'Production Memory Function: Stores job settings for quick repeat production', 'High-Speed Stable Operation: Designed for reliable mass production performance', 'Customizable Machine Configuration: Adaptable to various materials and production needs',],
+                 },
+                { 
+                  id: 'rewind-1', 
+                  title: 'Ultrasonic Center Cut And Fold Machine', 
+                  desc: 'Precision rewind for fast production lines', 
+                  image: '/Ultrasonic Center Cut And Fold Machine.jpg', 
+                  price: 'Contact for price',
+                  features: ['Automated Optical Inspection (AOI) System: Detects and removes defective labels to reduce waste and improve quality', 'Fully Automated Program Control: Requires minimal input, typically only label length adjustment', 'High-Speed Production Capability: Achieves up to 180 pieces per minute using roller feeding and precision sensors', 'Ultrasonic Cutting Technology: Produces smooth, sealed edges without fraying or deformation', 'PLC Touchscreen Control System: Ensures easy, intelligent, and user-friendly machine operation', 'High Accuracy Performance: Suitable for complex label shapes and multi-material applications', 'Versatile Industrial Application: Ideal for garment, home textile, packaging, and related industries',],
+                 },
+                { 
+                  id: 'safety-1', 
+                  title: 'Woven Label Cutting And Folding Machine', 
+                  desc: 'Noise reduction and safety enclosure', 
+                  image: '/Woven Label Cutting And Folding Machine.png', 
+                  price: 'Contact for price',
+                  features: ['Multi-Fold Capability: Supports end fold, center fold, mitre fold, and piece cut formats', 'Smart Cutting Mode Selection: Automatically switches between hot and cold cutting based on material type', 'High-Speed Production Output: Capable of producing up to 300 labels per minute', 'Touchscreen Control System: Simplifies setup of cutting width, speed, and folding modes', 'Automatic Blade Adjustment: Intelligently configures blade quantity and spacing for different label sizes', 'Wide Material Compatibility: Works with satin, polyester, cotton, and blended woven labels', 'High-Precision Cutting & Folding: Ensures consistent, accurate results with minimal errors', 'Labor & Cost Efficiency: Fully automated operation reduces manpower and material waste', 'Heavy-Duty Industrial Design: Built for long-term, reliable performance in demanding environments',],
+                },
+              ].map((p) => (
+                <ProductCard
+                  key={p.id}
+                  product={{ id: p.id, title: p.title, description: p.desc, image: p.image, price: p.price, features: (p as any).features }}
+                />
+              ))}
             </div>
           </div>
         </section>
@@ -124,35 +209,7 @@ export default function UltrasonicCuttingMachinePage() {
           </div>
         </section>
 
-        {/* ── Specs ──────────────────────────────────── */}
-        <section className="section">
-          <div className="container">
-            <div className="section-header js-reveal">
-              <span className="eyebrow">Technical Data</span>
-              <h2>Machine Specifications</h2>
-            </div>
-            <div className="js-reveal" style={{ overflowX: 'auto' }}>
-              <table>
-                <thead>
-                  <tr><th>Parameter</th><th>Standard</th><th>High-Speed</th><th>Multi-Head</th></tr>
-                </thead>
-                <tbody>
-                  {[
-                    ['Cutting Speed', 'Up to 80 m/min', 'Up to 200 m/min', 'Up to 150 m/min'],
-                    ['Frequency', '20 kHz', '35 kHz', '20 kHz'],
-                    ['Max Cut Width', '160mm', '250mm', '500mm'],
-                    ['Min Label Width', '5mm', '5mm', '5mm'],
-                    ['Power', '500W', '1000W', '2000W'],
-                    ['Materials', 'Poly, Nylon, Woven', 'All synthetics', 'All synthetics'],
-                    ['Noise Level', '< 72dB', '< 75dB', '< 78dB'],
-                  ].map((row) => (
-                    <tr key={row[0]}>{row.map((cell, i) => <td key={i}>{i === 0 ? <strong>{cell}</strong> : cell}</td>)}</tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
+        {/* Machine Specifications removed */}
 
         {/* ── CTA ────────────────────────────────────── */}
         <section className="section section--dark">

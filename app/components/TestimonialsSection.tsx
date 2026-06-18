@@ -3,7 +3,7 @@ export default function TestimonialsSection() {
     {
       id: 'testimonial-1',
       quote: '"',
-      text: 'PTP Solutions printed our entire product line packaging and the quality blew us away. Colors were spot-on, delivery was faster than expected. Will never use another printer.',
+      text: 'Start Sourcing printed our entire product line packaging and the quality blew us away. Colors were spot-on, delivery was faster than expected. Will never use another printer.',
       name: 'Sarah Mitchell',
       role: 'Brand Director, Lumière Co.',
       initials: 'SM',
@@ -12,7 +12,7 @@ export default function TestimonialsSection() {
     {
       id: 'testimonial-2',
       quote: '"',
-      text: "We order business cards and brochures for our real estate team every quarter. PTP's turnaround is insane \u2014 48 hours and everything looks immaculate.",
+      text: "We order business cards and brochures for our real estate team every quarter. Start Sourcing's turnaround is insane \u2014 48 hours and everything looks immaculate.",
       name: 'James Harrington',
       role: 'Managing Partner, Harrington Realty',
       initials: 'JH',
@@ -21,7 +21,7 @@ export default function TestimonialsSection() {
     {
       id: 'testimonial-3',
       quote: '"',
-      text: 'The trade show banners were stunning. Several people at the expo asked who our printer was. PTP Solutions is now our exclusive print partner.',
+      text: 'The trade show banners were stunning. Several people at the expo asked who our printer was. Start Sourcing is now our exclusive print partner.',
       name: 'Priya Anand',
       role: 'Marketing Manager, NovaTech Solutions',
       initials: 'PA',
