@@ -1,6 +1,53 @@
 'use client';
 
+import { useState, FormEvent } from 'react';
+
+type FormState = 'idle' | 'loading' | 'success' | 'error';
+
 export default function CTASection() {
+  const [formState, setFormState] = useState<FormState>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  // Controlled fields
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [product, setProduct] = useState('');
+  const [message, setMessage] = useState('');
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setFormState('loading');
+    setErrorMessage('');
+
+    try {
+      const res = await fetch('/api/send-quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ firstName, lastName, email, phone, product, message }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || 'Something went wrong. Please try again.');
+      }
+
+      setFormState('success');
+      // Reset fields
+      setFirstName('');
+      setLastName('');
+      setEmail('');
+      setPhone('');
+      setProduct('');
+      setMessage('');
+    } catch (err: unknown) {
+      setFormState('error');
+      setErrorMessage(err instanceof Error ? err.message : 'Unexpected error. Please try again.');
+    }
+  }
+
   return (
     <>
       {/* ── Red CTA Bar ────────────────────────────────────── */}
@@ -134,72 +181,208 @@ export default function CTASection() {
 
             {/* Right — form */}
             <div className="js-reveal" style={{ transitionDelay: '0.15s' }}>
-              <form
-                id="quote-form"
-                aria-label="Request a printing quote"
-                style={{
-                  background: 'var(--color-surface)',
-                  border: '1px solid var(--color-border)',
-                  borderRadius: 'var(--radius-xl)',
-                  padding: '2.5rem',
-                  boxShadow: 'var(--shadow-md)',
-                }}
-                onSubmit={(e) => e.preventDefault()}
-              >
-                <input type="hidden" id="input-product-hidden" name="product" />
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
-                  <div className="form-group">
-                    <label className="form-label" htmlFor="input-first-name">First Name</label>
-                    <input id="input-first-name" type="text" className="form-input" placeholder="John" required />
+
+              {/* ── Success State ── */}
+              {formState === 'success' ? (
+                <div
+                  role="alert"
+                  style={{
+                    background: 'var(--color-surface)',
+                    border: '1px solid #16a34a',
+                    borderRadius: 'var(--radius-xl)',
+                    padding: '3rem 2.5rem',
+                    boxShadow: 'var(--shadow-md)',
+                    textAlign: 'center',
+                  }}
+                >
+                  <div style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>✅</div>
+                  <h3 style={{ marginBottom: '0.75rem', color: '#16a34a' }}>Quote Request Sent!</h3>
+                  <p style={{ color: 'var(--color-secondary)', lineHeight: 1.7, marginBottom: '1.5rem' }}>
+                    We've received your request and a confirmation email has been sent to your inbox.
+                    Our team will get back to you within <strong>2 business hours</strong>.
+                  </p>
+                  <button
+                    onClick={() => setFormState('idle')}
+                    className="btn btn-primary"
+                    id="btn-send-another"
+                    style={{ margin: '0 auto' }}
+                  >
+                    Send Another Request
+                  </button>
+                </div>
+              ) : (
+                <form
+                  id="quote-form"
+                  aria-label="Request a printing quote"
+                  style={{
+                    background: 'var(--color-surface)',
+                    border: '1px solid var(--color-border)',
+                    borderRadius: 'var(--radius-xl)',
+                    padding: '2.5rem',
+                    boxShadow: 'var(--shadow-md)',
+                  }}
+                  onSubmit={handleSubmit}
+                >
+                  <input type="hidden" id="input-product-hidden" name="product" value={product} />
+
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
+                    <div className="form-group">
+                      <label className="form-label" htmlFor="input-first-name">First Name</label>
+                      <input
+                        id="input-first-name"
+                        type="text"
+                        className="form-input"
+                        placeholder="John"
+                        required
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
+                        disabled={formState === 'loading'}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label className="form-label" htmlFor="input-last-name">Last Name</label>
+                      <input
+                        id="input-last-name"
+                        type="text"
+                        className="form-input"
+                        placeholder="Smith"
+                        required
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}
+                        disabled={formState === 'loading'}
+                      />
+                    </div>
                   </div>
+
                   <div className="form-group">
-                    <label className="form-label" htmlFor="input-last-name">Last Name</label>
-                    <input id="input-last-name" type="text" className="form-input" placeholder="Smith" required />
+                    <label className="form-label" htmlFor="input-email">Email Address</label>
+                    <input
+                      id="input-email"
+                      type="email"
+                      className="form-input"
+                      placeholder="john@company.com"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      disabled={formState === 'loading'}
+                    />
                   </div>
-                </div>
-                <div className="form-group">
-                  <label className="form-label" htmlFor="input-email">Email Address</label>
-                  <input id="input-email" type="email" className="form-input" placeholder="john@company.com" required />
-                </div>
-                <div className="form-group">
-                  <label className="form-label" htmlFor="input-phone">Phone Number</label>
-                  <input id="input-phone" type="tel" className="form-input" placeholder="(555) 000-0000" />
-                </div>
-                <div className="form-group">
-                  <label className="form-label" htmlFor="input-product">Product Needed</label>
-                  <select id="input-product" className="form-select">
-                    <option value="">Select a product...</option>
-                    <option value="business-cards">Business Cards</option>
-                    <option value="brochures">Brochures & Flyers</option>
-                    <option value="banners">Banners & Signage</option>
-                    <option value="packaging">Custom Packaging</option>
-                    <option value="other">Other / Custom</option>
-                  </select>
-                </div>
-                <div className="form-group">
-                  <label className="form-label" htmlFor="input-message">Project Details</label>
-                  <textarea
-                    id="input-message"
-                    className="form-textarea"
-                    rows={4}
-                    placeholder="Tell us about your project — quantity, size, finish, timeline..."
-                    style={{ resize: 'vertical' }}
-                  />
-                </div>
-                <button type="submit" className="btn btn-primary btn-lg" id="btn-submit-quote" style={{ width: '100%', justifyContent: 'center' }}>
-                  Send Quote Request
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </button>
-                <p style={{ textAlign: 'center', fontSize: '0.8125rem', color: 'var(--color-muted)', marginTop: '1rem', marginBottom: 0 }}>
-                  🔒 Your information is secure and will never be shared.
-                </p>
-              </form>
+
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="input-phone">Phone Number</label>
+                    <input
+                      id="input-phone"
+                      type="tel"
+                      className="form-input"
+                      placeholder="(555) 000-0000"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      disabled={formState === 'loading'}
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="input-product">Product Needed</label>
+                    <select
+                      id="input-product"
+                      className="form-select"
+                      value={product}
+                      onChange={(e) => setProduct(e.target.value)}
+                      disabled={formState === 'loading'}
+                    >
+                      <option value="">Select a product...</option>
+                      <option value="business-cards">Business Cards</option>
+                      <option value="brochures">Brochures &amp; Flyers</option>
+                      <option value="banners">Banners &amp; Signage</option>
+                      <option value="packaging">Custom Packaging</option>
+                      <option value="other">Other / Custom</option>
+                    </select>
+                  </div>
+
+                  <div className="form-group">
+                    <label className="form-label" htmlFor="input-message">Project Details</label>
+                    <textarea
+                      id="input-message"
+                      className="form-textarea"
+                      rows={4}
+                      placeholder="Tell us about your project — quantity, size, finish, timeline..."
+                      style={{ resize: 'vertical' }}
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      disabled={formState === 'loading'}
+                    />
+                  </div>
+
+                  {/* Error message */}
+                  {formState === 'error' && (
+                    <div
+                      role="alert"
+                      style={{
+                        background: '#fef2f2',
+                        border: '1px solid #fca5a5',
+                        borderRadius: '8px',
+                        padding: '0.75rem 1rem',
+                        marginBottom: '1rem',
+                        color: '#991b1b',
+                        fontSize: '0.875rem',
+                      }}
+                    >
+                      ⚠️ {errorMessage}
+                    </div>
+                  )}
+
+                  <button
+                    type="submit"
+                    className="btn btn-primary btn-lg"
+                    id="btn-submit-quote"
+                    style={{ width: '100%', justifyContent: 'center', opacity: formState === 'loading' ? 0.7 : 1 }}
+                    disabled={formState === 'loading'}
+                    aria-busy={formState === 'loading'}
+                  >
+                    {formState === 'loading' ? (
+                      <>
+                        <span
+                          style={{
+                            display: 'inline-block',
+                            width: '14px',
+                            height: '14px',
+                            border: '2px solid rgba(255,255,255,0.4)',
+                            borderTopColor: 'white',
+                            borderRadius: '50%',
+                            animation: 'spin 0.7s linear infinite',
+                            marginRight: '8px',
+                          }}
+                          aria-hidden="true"
+                        />
+                        Sending…
+                      </>
+                    ) : (
+                      <>
+                        Send Quote Request
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </>
+                    )}
+                  </button>
+
+                  <p style={{ textAlign: 'center', fontSize: '0.8125rem', color: 'var(--color-muted)', marginTop: '1rem', marginBottom: 0 }}>
+                    🔒 Your information is secure and will never be shared.
+                  </p>
+                </form>
+              )}
+
             </div>
           </div>
         </div>
       </section>
+
+      {/* Spinner keyframe */}
+      <style>{`
+        @keyframes spin {
+          to { transform: rotate(360deg); }
+        }
+      `}</style>
     </>
   );
 }
